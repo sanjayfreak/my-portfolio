@@ -10,9 +10,11 @@ const projects = [
     title: 'AI-Based Smart Task Manager',
     description:
       'A full-stack task management platform with AI-powered insights, secure authentication, real-time task tracking, and performance analytics.',
-    tags: ['React', 'Spring Boot', 'MySQL', 'JWT'],
+    tags: ['React', 'Spring Boot', 'MongoDB', 'JWT'],
     image: sm,
     bgColor: 'linear-gradient(135deg, #FEF3C7, #FDE68A)',
+    align: 'left',
+    liveUrl: 'https://smart-task-manager-21xn.onrender.com/',
   },
   {
     num: '02',
@@ -22,6 +24,9 @@ const projects = [
     tags: ['React', 'Spring Boot', 'MongoDB', 'AI'],
     image: em,
     bgColor: 'linear-gradient(135deg, #DCFCE7, #BBF7D0)',
+    align: 'right',
+    // TODO: paste this project's Render URL here to show its Live Demo button
+    liveUrl: '',
   },
 ]
 
@@ -241,44 +246,52 @@ function ProjectCard({ project }) {
             gap: '12px',
           }}
         >
-         
+          {/* Live Demo — rendered only when the project has a URL */}
+          {project.liveUrl && (
+            <motion.a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open the live demo of ${project.title} in a new tab`}
+              style={{
+                display: 'inline-block',
 
-          {/* Live Demo */}
-          <motion.button
-            style={{
-              padding: '10px 20px',
+                padding: '10px 20px',
 
-              backgroundColor:
-                'transparent',
+                backgroundColor:
+                  'transparent',
 
-              color: '#D97706',
+                color: '#D97706',
 
-              fontFamily:
-                'Manrope, sans-serif',
+                fontFamily:
+                  'Manrope, sans-serif',
 
-              fontSize: '13px',
+                fontSize: '13px',
 
-              fontWeight: 600,
+                fontWeight: 600,
 
-              borderRadius: '50px',
+                borderRadius: '50px',
 
-              border:
-                '2px solid #D97706',
+                border:
+                  '2px solid #D97706',
 
-              cursor: 'pointer',
-            }}
-            whileHover={{
-              scale: 1.05,
+                textDecoration: 'none',
 
-              backgroundColor:
-                'rgba(217,119,6,0.06)',
-            }}
-            whileTap={{
-              scale: 0.97,
-            }}
-          >
-            Live Demo →
-          </motion.button>
+                cursor: 'pointer',
+              }}
+              whileHover={{
+                scale: 1.05,
+
+                backgroundColor:
+                  'rgba(217,119,6,0.06)',
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
+            >
+              Live Demo →
+            </motion.a>
+          )}
         </div>
       </div>
     </motion.div>
