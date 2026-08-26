@@ -30,13 +30,13 @@ export default function About() {
   const inView = useInView(ref, { once: true, amount: 0.2, margin: "0px 0px -100px 0px" })
 
   return (
-    <section id="about" className="relative py-28 px-8 md:px-20 bg-bg-primary overflow-hidden">
+    <section id="about" className="relative py-20 md:py-28 px-5 sm:px-8 md:px-20 bg-bg-primary overflow-hidden">
       {/* Watermark */}
-      <span className="absolute top-10 right-10 font-playfair font-black text-[160px] text-text-primary opacity-[0.03] select-none leading-none">
+      <span className="absolute top-5 right-3 md:top-10 md:right-10 font-playfair font-black text-[84px] md:text-[160px] text-text-primary opacity-[0.03] select-none leading-none pointer-events-none">
         01
       </span>
 
-      <div ref={ref} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+      <div ref={ref} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
 
         {/* LEFT — Photo */}
         <motion.div
@@ -48,32 +48,32 @@ export default function About() {
           <div className="relative">
             {/* Circle Photo Frame */}
             <div
-              className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden"
+              className="w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden"
               style={{
                 boxShadow: '0 0 0 6px #F59E0B, 0 0 40px rgba(245,158,11,0.4)'
               }}
             >
               {/* Replace this div with your photo */}
               <div className="w-full h-full bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
-                <span className="font-playfair text-8xl font-black text-accent-amber opacity-30">S</span>
+                <span className="font-playfair text-6xl sm:text-8xl font-black text-accent-amber opacity-30">S</span>
               </div>
             </div>
 
             {/* Floating Badge */}
             <motion.div
-              className="absolute -bottom-4 -right-4 glass px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg"
+              className="absolute -bottom-3 right-0 sm:-bottom-4 sm:-right-4 glass px-3 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2 shadow-lg whitespace-nowrap"
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
             >
               <span className="w-2.5 h-2.5 rounded-full bg-accent-green animate-pulse" />
-              <span className="font-manrope text-xs font-semibold text-text-primary">
+              <span className="font-manrope text-[11px] sm:text-xs font-semibold text-text-primary">
                 Available for Internship
               </span>
             </motion.div>
 
             {/* Decorative floating shapes */}
             <motion.div
-              className="absolute -top-6 -left-6 w-16 h-16 rounded-2xl bg-accent-gold opacity-20"
+              className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-accent-gold opacity-20"
               animate={{ rotate: [0, 15, 0], scale: [1, 1.1, 1] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             />
@@ -97,18 +97,18 @@ export default function About() {
           </p>
 
           {/* Heading */}
-          <h2 className="font-playfair font-black text-4xl md:text-5xl text-text-primary leading-tight mb-6">
+          <h2 className="font-playfair font-black text-3xl sm:text-4xl md:text-5xl text-text-primary leading-tight mb-6">
             Developer by day,<br />
             designer by instinct.
           </h2>
 
           {/* Bio */}
-          <p className="font-lato text-text-secondary text-lg leading-relaxed mb-8">
+          <p className="font-lato text-text-secondary text-base sm:text-lg leading-relaxed mb-8">
            I am a 3rd-year B.Tech student in Computer Science and Business Systems with a focus on full-stack web development. I build scalable and efficient web applications, handling both frontend and backend development, including APIs and database integration. My approach emphasizes clean architecture, performance, and user-centric design. I continuously work on improving my problem-solving abilities, system design knowledge, and deployment skills to meet industry standards. I am seeking opportunities to contribute to real-world projects and grow as a software engineer
           </p>
 
           {/* Stats */}
-          <div className="flex gap-10 mb-10 flex-wrap">
+          <div className="flex gap-8 sm:gap-10 mb-10 flex-wrap">
             {[
               { value: 3, suffix: '+', label: 'Projects' },
               { value: 3, suffix: '', label: 'Internships' },

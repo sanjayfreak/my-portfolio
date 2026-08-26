@@ -103,21 +103,21 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-28 px-8 md:px-20 overflow-hidden"
+      className="relative py-20 md:py-28 px-5 sm:px-8 md:px-20 overflow-hidden"
       style={{
         background: '#1A1A2E',
       }}
     >
       {/* Watermark */}
       <span
-        className="absolute top-10 right-10 font-playfair font-black text-[160px] text-white opacity-[0.03] select-none leading-none"
+        className="absolute top-5 right-3 md:top-10 md:right-10 font-playfair font-black text-[84px] md:text-[160px] text-white opacity-[0.03] select-none leading-none pointer-events-none"
       >
         05
       </span>
 
       {/* Ambient Glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 rounded-full pointer-events-none"
         style={{
           background:
             'radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%)',
@@ -131,7 +131,7 @@ export default function Contact() {
       >
         {/* ================= HEADING ================= */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{
             opacity: 0,
             y: 40,
@@ -157,7 +157,7 @@ export default function Contact() {
             Get In Touch
           </p>
 
-          <h2 className="font-playfair font-black text-4xl md:text-5xl text-white leading-tight">
+          <h2 className="font-playfair font-black text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
             Let's Build Something
             <br />
 
@@ -175,7 +175,7 @@ export default function Contact() {
           </h2>
 
           <p
-            className="font-lato text-lg mt-6"
+            className="font-lato text-base sm:text-lg mt-6"
             style={{
               color: '#9CA3AF',
             }}
@@ -185,7 +185,7 @@ export default function Contact() {
         </motion.div>
 
         {/* ================= TWO COLUMNS ================= */}
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
 
           {/* ================= FORM ================= */}
           <motion.form
@@ -232,7 +232,7 @@ export default function Contact() {
                 color: 'white',
                 fontFamily:
                   'Lato, sans-serif',
-                fontSize: '14px',
+                fontSize: '16px',
                 outline: 'none',
               }}
               onFocus={(e) =>
@@ -269,7 +269,7 @@ export default function Contact() {
                 color: 'white',
                 fontFamily:
                   'Lato, sans-serif',
-                fontSize: '14px',
+                fontSize: '16px',
                 outline: 'none',
               }}
               onFocus={(e) =>
@@ -306,9 +306,9 @@ export default function Contact() {
                 color: 'white',
                 fontFamily:
                   'Lato, sans-serif',
-                fontSize: '14px',
+                fontSize: '16px',
                 outline: 'none',
-                resize: 'none',
+                resize: 'vertical',
               }}
               onFocus={(e) =>
                 (e.target.style.borderColor =
@@ -437,7 +437,7 @@ export default function Contact() {
 
           {/* ================= CONTACT INFO ================= */}
           <motion.div
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-6 sm:gap-8"
             initial={{
               opacity: 0,
               x: 60,
@@ -492,7 +492,7 @@ export default function Contact() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-5 group"
+                  className="flex items-center gap-4 sm:gap-5 group min-w-0"
                   style={{
                     textDecoration: 'none',
                   }}
@@ -502,8 +502,8 @@ export default function Contact() {
                 >
                   <div
                     style={{
-                      width: '56px',
-                      height: '56px',
+                      width: '52px',
+                      height: '52px',
                       borderRadius: '16px',
                       background:
                         'rgba(245,158,11,0.15)',
@@ -522,7 +522,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <p
                       style={{
                         fontFamily:
@@ -547,6 +547,7 @@ export default function Contact() {
                         color: 'white',
                         fontWeight: 500,
                         marginTop: '4px',
+                        overflowWrap: 'anywhere',
                       }}
                       className="group-hover:text-accent-gold transition-colors"
                     >

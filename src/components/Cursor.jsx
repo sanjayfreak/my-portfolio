@@ -1,18 +1,28 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useIsTouch } from '../hooks/useMediaQuery'
 
 export default function Cursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 })
   const [hovered, setHovered] = useState(false)
+  const isTouch = useIsTouch()
 
   useEffect(() => {
+    // No custom cursor on phones/tablets — there is no pointer to follow
+    if (isTouch) return
+
     const move = (e) => setPos({ x: e.clientX, y: e.clientY })
     window.addEventListener('mousemove', move)
 
+    const onEnter = () => setHovered(true)
+    const onLeave = () => setHovered(false)
+
     const addHover = () => {
       document.querySelectorAll('a, button, [data-hover]').forEach((el) => {
-        el.addEventListener('mouseenter', () => setHovered(true))
-        el.addEventListener('mouseleave', () => setHovered(false))
+        el.removeEventListener('mouseenter', onEnter)
+        el.removeEventListener('mouseleave', onLeave)
+        el.addEventListener('mouseenter', onEnter)
+        el.addEventListener('mouseleave', onLeave)
       })
     }
 
@@ -25,7 +35,9 @@ export default function Cursor() {
       window.removeEventListener('mousemove', move)
       observer.disconnect()
     }
-  }, [])
+  }, [isTouch])
+
+  if (isTouch) return null
 
   return (
     <>
