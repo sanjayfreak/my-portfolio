@@ -8,7 +8,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
-
+import Writing from './components/Writing'
 export default function App() {
   const [loaded, setLoaded] = useState(false)
 
