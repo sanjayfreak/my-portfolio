@@ -112,7 +112,7 @@ export default function Contact() {
       <span
         className="absolute top-5 right-3 md:top-10 md:right-10 font-playfair font-black text-[84px] md:text-[160px] text-white opacity-[0.03] select-none leading-none pointer-events-none"
       >
-        05
+        06
       </span>
 
       {/* Ambient Glow */}

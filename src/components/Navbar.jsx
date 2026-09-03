@@ -4,7 +4,7 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
 import { useScrollPosition } from '../hooks/useScrollPosition'
 import { useIsMobile } from '../hooks/useMediaQuery'
 
-const links = ['About', 'Skills', 'Projects', 'Experience', 'Contact']
+const links = ['About', 'Skills', 'Projects', 'Writing', 'Experience', 'Contact']
 
 export default function Navbar() {
   const scrollY = useScrollPosition()

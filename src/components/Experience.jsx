@@ -101,7 +101,7 @@ export default function Experience() {
         height: '20px',
         borderRadius: '50%',
         backgroundColor: '#F59E0B',
-        border: '4px solid #F0EDE8',
+        border: '4px solid #FAFAF8',
         zIndex: 10,
         flexShrink: 0,
         boxShadow: '0 0 0 0 rgba(245,158,11,0.4)',
@@ -123,7 +123,7 @@ export default function Experience() {
       style={{
         position: 'relative',
         padding: isMobile ? '72px 20px' : isTablet ? '96px 40px' : '112px 80px',
-        backgroundColor: '#F0EDE8',
+        backgroundColor: '#FAFAF8',
         overflow: 'hidden',
       }}
     >
@@ -142,7 +142,7 @@ export default function Experience() {
           pointerEvents: 'none',
         }}
       >
-        04
+        05
       </span>
 
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
